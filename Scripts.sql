@@ -12,8 +12,6 @@ ON L.ID_Local = V.ID_Local
 WHERE V.Fecha >= DATEADD(DAY, -30, GETDATE())
 
 
-
-
 --El día y hora en que se realizó la venta con el monto más alto (y cuál es aquel monto)
 SELECT TOP 1 V.Total AS 'Monto Mas Alto', DAY(v.Fecha) AS Dia, DATEPART(HOUR, v.Fecha) AS Hora FROM [dbo].[Venta] V
 INNER JOIN [dbo].[Local] L

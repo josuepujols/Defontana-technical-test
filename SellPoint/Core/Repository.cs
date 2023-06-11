@@ -1,11 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SellPoint.Core.ICore;
 using SellPoint.Models;
 
 namespace Core
 {
-    public static class Repository
+    public class Repository : IRepository
     {
-        public static async Task<List<VentaDetalle>> GetAllSales()
+        public async Task<List<VentaDetalle>> GetAllSales()
         {
             using PruebaContext _context = new();
             return await _context.VentaDetalles
